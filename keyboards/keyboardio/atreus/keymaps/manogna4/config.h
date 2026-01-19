@@ -1,4 +1,4 @@
-/* Copyright 2020 @ben_roe (keycapsss.com)
+/* Copyright 2022 kkokdae <kkokdae@me.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,20 +16,16 @@
 
 #pragma once
 
-#ifdef RGBLIGHT_ENABLE
-#   define RGBLED_NUM 60  // Total number of LEDs
-#   define RGBLED_SPLIT { 30, 30 } // LEDs per side
-#   define RGBLIGHT_SPLIT
-#endif
+//#define PERMISSIVE_HOLD
 
-// Limit the power draw
-#ifdef IOS_DEVICE_ENABLE
-  #define RGBLIGHT_LIMIT_VAL 40
-#else
-  #define RGBLIGHT_LIMIT_VAL 80
-#endif
+#define TAPPING_TERM 200
 
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
+/* Tapping this number of times holds the key until tapped
+this number of times again. this is for osm(mod) */
+#define ONESHOT_TAP_TOGGLE 1000
+
+
+/* Time (in ms) before the one shot key is released */
+#define ONESHOT_TIMEOUT 1000 
+
+//#define STRICT_LAYER_R
