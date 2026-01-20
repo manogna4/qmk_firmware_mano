@@ -25,6 +25,8 @@ enum custom_keycodes {
 #define KC_OCTL OSM(MOD_LCTL)
 #define KC_OALT OSM(MOD_LALT)
 #define KC_OGUI OSM(MOD_LGUI)
+#define OS_MEH OSM(MOD_MEH)
+#define OS_HYPR OSM(MOD_HYPR)
 
 // one shot layers short codes
 #define KC_ONAV OSL(NAV)
@@ -51,38 +53,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [ALT] = LAYOUT(
     KC_COMM, KC_C   , KC_D   , KC_F   , KC_K                     , KC_V   , KC_H   , KC_T   , KC_L   , KC_DOT ,
     KC_A   , KC_S   , KC_E   , KC_R   , KC_Y                     , KC_BSPC, KC_N   , KC_I   , KC_O   , KC_ENT ,
-    KC_Q   , KC_W   , KC_G   , KC_B   , KC_J   , KC_SPL1, KC_CAPS, KC_X   , KC_M   , KC_U   , KC_P   , KC_Z   ,
-    KC_SPL3, KC_SPL2, KC_LALT, KC_ONUM, KC_ONAV, KC_OFNC, KC_OCTL, KC_SPC , KC_OSYM, KC_LALT, KC_RBT , KC_NO  ),
+    KC_Q   , KC_W   , KC_G   , KC_B   , KC_J   , OS_HYPR, OS_MEH , KC_X   , KC_M   , KC_U   , KC_P   , KC_Z   ,
+    QK_RBT , KC_LGUI, KC_LALT, KC_ONUM, KC_ONAV, KC_OFNC, KC_OCTL, KC_SPC , KC_OSYM, KC_LALT, KC_LGUI, QK_RBT ),
   
   [NAV] = LAYOUT(
     KC_ENT , KC_STAB, KC_ESC , KC_TAB , KC_DEL                   , KC_STAB, KC_PGUP, KC_UP  , KC_PGDN, KC_SLSH,
     KC_OGUI, KC_OCTL, KC_OSFT, KC_OALT, KC_BSPC                  , KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT ,
-    KC_CTLZ, KC_CTLX, KC_CTLC, KC_CTLV, QK_RBT , KC_NO  , KC_SPL2, KC_TAB , KC_HOME, KC_DEL , KC_END , KC_INS ,
-    KC_NO  , KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFNC, KC_SPL1, KC_SPC , KC_OSYM, KC_NO  , KC_NO  , KC_NO  ),
+    KC_CTLZ, KC_CTLX, KC_CTLC, KC_CTLV, KC_SPL1, KC_SPL3, KC_SPL2, KC_TAB , KC_HOME, KC_DEL , KC_END , KC_INS ,
+    KC_TRNS, KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFNC, KC_SPL1, KC_SPC , KC_OSYM, KC_NO  , KC_NO  , KC_TRNS),
 
   [NUM] = LAYOUT(
-    KC_SPC , KC_STAB, KC_UP  , KC_TAB , KC_CIRC                  , KC_PLUS, KC_7   , KC_8   , KC_9   , KC_PAST,
+    KC_SPC , KC_STAB, KC_UP  , KC_TAB , KC_CIRC                  , KC_MINS, KC_7   , KC_8   , KC_9   , KC_PAST,
     KC_N000, KC_LEFT, KC_DOWN, KC_RGHT, KC_EQL                   , KC_BSPC, KC_4   , KC_5   , KC_6   , KC_ENT ,
-    KC_OGUI, KC_OCTL, KC_OSFT, KC_OALT, KC_PERC, KC_NO  , KC_NO  , KC_MINS, KC_1   , KC_2   , KC_3   , KC_PSLS,
-    KC_NO  , KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFNC, KC_OCTL, KC_0   , KC_DOT , KC_NO  , KC_NO  , KC_NO  ),
+    KC_OGUI, KC_OCTL, KC_OSFT, KC_OALT, KC_PERC, KC_NO  , KC_NO  , KC_PLUS, KC_1   , KC_2   , KC_3   , KC_PSLS,
+    KC_TRNS, KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFNC, KC_OCTL, KC_0   , KC_DOT , KC_NO  , KC_NO  , KC_TRNS),
 
   [SYM] = LAYOUT(
     KC_RABK, KC_MINS, KC_DQUO, KC_PLUS, KC_SCLN                  , KC_GRV , KC_RBRC, KC_RPRN, KC_RCBR, KC_PIPE,
     KC_LABK, KC_UNDS, KC_QUOT, KC_EQL , KC_COLN                  , KC_BSPC, KC_LBRC, KC_LPRN, KC_LCBR, KC_AMPR,
     KC_EXLM, KC_ASTR, KC_AT  , KC_SLSH, KC_QUES, KC_NO  , KC_NO  , KC_TILD, KC_DLR , KC_HASH, KC_BSLS, KC_PERC,
-    KC_NO  , KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFNC, KC_OCTL, KC_SPC , KC_OSYM, KC_NO  , KC_NO  , KC_NO  ),
+    KC_TRNS, KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFNC, KC_OCTL, KC_SPC , KC_OSYM, KC_NO  , KC_NO  , KC_TRNS),
   
   [FNC] = LAYOUT(
     KC_DOT , KC_L   , KC_T   , KC_H   , KC_V                     , KC_F15 , KC_F7  , KC_F8  , KC_F9  , KC_F11 ,
     KC_SPC , KC_O   , KC_I   , KC_N   , KC_BSPC                  , KC_F14 , KC_F4  , KC_F5  , KC_F6  , KC_F10 ,
     KC_Z   , KC_P   , KC_U   , KC_M   , KC_X   , KC_NO  , KC_NO  , KC_F13 , KC_F1  , KC_F2  , KC_F3  , KC_F12 ,
-    KC_NO  , KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFN2, KC_APP , KC_CAPS, QK_BOOT, KC_NO  , KC_NO  , KC_NO  ),
+    KC_TRNS, KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFN2, KC_APP , KC_CAPS, KC_SPL4, KC_NO  , KC_NO  , KC_TRNS),
   
   [FN2] = LAYOUT(
-    KC_DOT , KC_17  , KC_18  , KC_19  , KC_V                     , KC_F15 , KC_F7  , KC_F8  , KC_F9  , KC_F11 ,
-    KC_SPC , KC_14  , KC_15  , KC_16  , KC_BSPC                  , KC_F14 , KC_F4  , KC_F5  , KC_F6  , KC_F10 ,
-    KC_Z   , KC_21  , KC_22  , KC_23  , KC_X   , KC_NO  , KC_NO  , KC_F13 , KC_F1  , KC_F2  , KC_F3  , KC_F12 ,
-    KC_NO  , KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_NO  , KC_APP , KC_CAPS, QK_BOOT, KC_NO  , KC_NO  , KC_NO  ),
+    KC_F11 , KC_F7  , KC_F8  , KC_F9  , KC_F15                   , KC_VOLU, KC_BTN1, KC_MS_U, KC_BTN2, KC_PAUS,
+    KC_F10 , KC_F4  , KC_F5  , KC_F6  , KC_F14                   , KC_VOLD, KC_MS_L, KC_MS_D, KC_MS_R, KC_SCRL,
+    KC_F12 , KC_F1  , KC_F2  , KC_F3  , KC_F13 , KC_NO  , KC_NO  , KC_MUTE, KC_WH_U, QK_RBT , KC_WH_L, KC_PSCR,
+    KC_TRNS, KC_NO  , KC_NO  , KC_ONUM, KC_ONAV, KC_OFNC, KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_TRNS),
 
 };
 
